@@ -10,6 +10,24 @@ const Menu = () => {
   const dispatch = useDispatch()
   const productData = useSelector((state) => state.product.productList);
 
+const productDisplay = productData.find((el) => el._id === filterby);
+
+if (!productDisplay) {
+  return (
+    <div className="p-2 md:p-4">
+      <p>Product not found.</p>
+    </div>
+  );
+}
+
+// If productDisplay is defined, continue rendering the component
+return (
+  <div className="p-2 md:p-4">
+    {/* Existing JSX code */}
+  </div>
+);
+
+  
   const productDisplay = productData.filter((el) => el._id === filterby)[0];
 
   const handleAddCartProduct = (e) => {
