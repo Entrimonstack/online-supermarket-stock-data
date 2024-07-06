@@ -10,9 +10,9 @@ const Menu = () => {
   const dispatch = useDispatch()
   const productData = useSelector((state) => state.product.productList);
 
-const productDisplay = productData.find((el) => el._id === filterby);
+const productDisplays = productData.find((el) => el._id === filterby);
 
-if (!productDisplay) {
+if (!productDisplays) {
   return (
     <div className="p-2 md:p-4">
       <p>Product not found.</p>
